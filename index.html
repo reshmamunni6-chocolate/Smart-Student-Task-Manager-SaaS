@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Marks Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <div class="icon">📚</div>
+      <h1>Student Marks Calculator</h1>
+      <p>Enter marks for five subjects to calculate total, percentage, and grade.</p>
+    </header>
+
+    <form id="marksForm" class="card">
+      <label for="studentName">Student name</label>
+      <input id="studentName" type="text" placeholder="Enter student name" required maxlength="60">
+
+      <label for="rollNumber">Roll number</label>
+      <input id="rollNumber" type="text" placeholder="Enter roll number" required maxlength="20">
+
+      <div class="subjects-heading">
+        <h2>Subject marks</h2>
+        <span>Each subject: 0–100</span>
+      </div>
+      <div class="subject-grid">
+        <div><label for="maths">Mathematics</label><input id="maths" type="number" min="0" max="100" step="1" placeholder="0–100" required></div>
+        <div><label for="science">Science</label><input id="science" type="number" min="0" max="100" step="1" placeholder="0–100" required></div>
+        <div><label for="english">English</label><input id="english" type="number" min="0" max="100" step="1" placeholder="0–100" required></div>
+        <div><label for="social">Social Studies</label><input id="social" type="number" min="0" max="100" step="1" placeholder="0–100" required></div>
+        <div><label for="computer">Computer Science</label><input id="computer" type="number" min="0" max="100" step="1" placeholder="0–100" required></div>
+      </div>
+      <p class="hint">For this project, a score of 35 or more is considered a pass in each subject.</p>
+      <button type="submit">Calculate Result</button>
+      <button type="reset" class="secondary">Clear Form</button>
+      <p id="errorMessage" class="error" role="alert"></p>
+    </form>
+
+    <section id="result" class="card result" aria-live="polite" hidden>
+      <h2>Student Result</h2>
+      <p><strong>Name:</strong> <span id="resultName"></span></p>
+      <p><strong>Roll number:</strong> <span id="resultRoll"></span></p>
+      <div class="stats">
+        <div><span>Total marks</span><strong id="totalMarks">0 / 500</strong></div>
+        <div><span>Percentage</span><strong id="percentage">0%</strong></div>
+        <div><span>Grade</span><strong id="grade">-</strong></div>
+      </div>
+      <p id="status" class="status"></p>
+      <button id="printButton" type="button">Print Result</button>
+    </section>
+    <footer>Student Marks Calculator · Beginner-friendly HTML, CSS and JavaScript project</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
